@@ -1,7 +1,6 @@
 ﻿//#define INHERITANCE_1
 //#define INHERITANCE_2
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
