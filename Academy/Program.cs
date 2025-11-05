@@ -13,7 +13,7 @@ namespace Academy
 	{
 		static readonly string delimiter = "\n--------------------------------\n";
 		static void Main(string[] args)
-	{
+		{
 
 #if INHERITANCE_1
 			Console.WriteLine("Academy");
@@ -52,13 +52,14 @@ namespace Academy
 			//Base-class pointers:
 			//Generalisation (Upcast - приведение дочернего объекта к базовому типу)
 
-			Human[] group = {
-			new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 90, 95),
-			new Teacher("White", "Walter", 50, "Chemistry", 25),
-			new Graduate("Schreder", "Hank", 40,"Criminalistic", "OBN", 50, 60, "How to catch Heisenberg"),
-			new Student("Vercetty","Tommy", 30, "Theft", "Vice", 98, 99),
-			new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20),
-			new Teacher("Schwazenegger", "Arnold", 78, "Heavy Metal", 65)
+			Human[] group = 
+			{
+				new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 90, 95),
+				new Teacher("White", "Walter", 50, "Chemistry", 25),
+				new Graduate("Schreder", "Hank", 40,"Criminalistic", "OBN", 50, 60, "How to catch Heisenberg"),
+				new Student("Vercetty","Tommy", 30, "Theft", "Vice", 98, 99),
+				new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20),
+				new Teacher("Schwazenegger", "Arnold", 78, "Heavy Metal", 65)
 			};
 
 			Console.WriteLine(delimiter);
@@ -66,6 +67,7 @@ namespace Academy
 			for (int i = 0; i < group.Length; i++)
 			{
 				//group[i].Info();
+				
 				Console.WriteLine(group[i].ToString());
 				Console.WriteLine(delimiter);
 			}
@@ -73,3 +75,5 @@ namespace Academy
 		}
 	}
 }
+
+

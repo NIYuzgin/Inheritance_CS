@@ -36,7 +36,6 @@ namespace Academy
 		{
 			Init(other.Speciality, other.Group, other.Rating, other.Attendance);
 			Console.WriteLine($"SConstructor:\t{GetHashCode()}");
-
 		}
 		~Student()
 		{

@@ -40,9 +40,9 @@ namespace Academy
 		{
 			return
 				// Split('.') разделяет 'Academy.Type' на массив строк,
-				// и из этого массивав мы берем последний элемент
+				// и из этого массива мы берем последний элемент
 				$"{base.ToString().Split('.').Last()}:".PadRight(12, '.') +
-				$"{LastName.PadRight(16)} {FirstName.PadRight(10)} {Age.ToString().PadRight(5)}";
+				$"{LastName.PadRight(16)}{FirstName.PadRight(10)}{Age.ToString().PadRight(5)}";
 			// PadRight() выравнивает строку по левому борту. От Padding - выравнивание
 		}
 	}
