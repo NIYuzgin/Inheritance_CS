@@ -1,6 +1,6 @@
 ﻿//#define INHERITANCE_1
 //#define INHERITANCE_2
-#define WRITE_TO_FILE
+//#define WRITE_TO_FILE
 
 using System;
 using System.Collections.Generic;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Academy
 {
@@ -76,8 +77,22 @@ namespace Academy
 			}
 			Save(group, "group.txt");
 #endif
+
+			Human[] group = Load("group.txt");
+			Print(group);
+
 		}
 
+		static void Print(Human[] group)
+		{
+			for (int i = 0; i < group.Length; i++)
+			{
+				Console.WriteLine(group[i]);
+				Console.WriteLine(delimiter);
+			}
+			Console.WriteLine();
+		}
+		
 		static void Save(Human[] group, string filename)
 		{
 			StreamWriter writer = new StreamWriter(filename);
@@ -89,30 +104,8 @@ namespace Academy
 			System.Diagnostics.Process.Start("notepad", filename);
 		}
 
-
-	/*
-	Streamer streamer = new Streamer();
-	 Human[] group = streamer.Load("group.txt");
-
-		public void Print(Human[] group)
-		{
-			for (int i = 0; i < group.Length; i++)
-			{
-				Console.WriteLine(group[i]);
-			Console.WriteLine(delimiter);
-			}
-
-		Console.WriteLine();
-		}
-		static void Save(Human[] group, string filename)
-		{
-			
-			
-		}
-
-		static Human[] Load(string filename)
-		{
-
+		static Human[] Load(string filename) 
+		{ 
 			List<Human> group = new List<Human>();
 			StreamReader reader = new StreamReader(filename);
 			try
@@ -130,10 +123,8 @@ namespace Academy
 			}
 			catch (Exception ex)
 			{
-
 				Console.WriteLine(ex.Message);
 			}
-
 			reader.Close();
 			return group.ToArray();
 		}
@@ -146,11 +137,11 @@ namespace Academy
 				case "Student": human = new Student("", "", 0, "", "", 0, 0); break;
 				case "Graduate": human = new Graduate("", "", 0, "", "", 0, 0, ""); break;
 				case "Teacher": human = new Teacher("", "", 0, "", 0); break;
-
 			}
 			return human;
 		}
-	*/
-}
+
 	}
+}
+
 

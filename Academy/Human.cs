@@ -57,9 +57,7 @@ namespace Academy
 			FirstName = values[2];
 			Age = Convert.ToInt32(values[3]);
 			return this;
-
 		}
-
 
 	}
 }

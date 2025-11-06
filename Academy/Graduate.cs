@@ -54,6 +54,5 @@ namespace Academy
 			return this;
 		}
 
-
 	}
 }
