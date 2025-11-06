@@ -39,11 +39,27 @@ namespace Academy
 		public override string ToString()
 		{
 			return
-				// Split('.') разделяет 'Academy.Type' на массив строк,
-				// и из этого массива мы берем последний элемент
-				$"{base.ToString().Split('.').Last()}:".PadRight(12, '.') +
-				$"{LastName.PadRight(16)}{FirstName.PadRight(10)}{Age.ToString().PadRight(5)}";
+			// Split('.') разделяет 'Academy.Type' на массив строк,
+			// и из этого массива мы берем последний элемент
+			$"{base.ToString().Split('.').Last()}:".PadRight(12, '.') +
+			$"{LastName.PadRight(16)}{FirstName.PadRight(10)}{Age.ToString().PadRight(5)}";
 			// PadRight() выравнивает строку по левому борту. От Padding - выравнивание
 		}
+		public virtual string ToStringCSV()
+		{
+			return this.GetType().ToString().Split('.').Last() + ","
+			+ $"{LastName},{FirstName},{Age}";
+		}
+
+		public virtual Human Init(string[] values)
+		{
+			LastName = values[1];
+			FirstName = values[2];
+			Age = Convert.ToInt32(values[3]);
+			return this;
+
+		}
+
+
 	}
 }

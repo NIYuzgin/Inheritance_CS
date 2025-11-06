@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Academy
 {
@@ -43,7 +44,20 @@ namespace Academy
 		public override string ToString()
 		{
 			return base.ToString()+
-				$"{Speciality.PadRight(24)}{Experience.ToString().PadRight(16)}";
+				$"{Speciality.PadRight(24)}{Experience.ToString().PadRight(5)}";
+		}
+
+		public override string ToStringCSV()
+		{
+			return base.ToStringCSV()+$",{Speciality},{Experience}";
+		}
+
+		public override Human Init(string[] values)
+		{
+			base.Init(values);
+			Speciality = values[4];
+			Experience =Convert.ToInt32(values[5]);
+			return this;
 		}
 
 	}

@@ -40,7 +40,20 @@ namespace Academy
 		public override string ToString()
 		{
 			return base.ToString() +
-				$"{Subject.PadRight(16)}";
+				$"{Subject}";
 		}
+		public override string ToStringCSV()
+		{
+			return base.ToStringCSV()+$",{Subject}";
+		}
+
+		public override Human Init(string[] values)
+		{
+			base.Init(values);
+			Subject = values[8];
+			return this;
+		}
+
+
 	}
 }
