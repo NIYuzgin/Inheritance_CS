@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-	internal class HumanFactory
+	static internal class HumanFactory
 	{
 
 		public static Human Create(string type)
@@ -18,7 +18,6 @@ namespace Academy
 				case "Student": human = new Student("", "", 0, "", "", 0, 0); break;
 				case "Graduate": human = new Graduate("", "", 0, "", "", 0, 0, ""); break;
 				case "Teacher": human = new Teacher("", "", 0, "", 0); break;
-
 			}
 			return human;
 		}
