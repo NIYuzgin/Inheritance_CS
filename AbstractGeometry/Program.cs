@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define ABSTRACT_1
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,26 +24,42 @@ namespace AbstractGeometry
 				Console.WindowWidth, Console.WindowHeight
 				);
 			PaintEventArgs e = new PaintEventArgs(graphics, window_rect);
-			
+
 			// e.Graphics.DrawRectangle(new Pen(Color.Red), 300, 100, 500, 300);
 
+#if ABSTRACT_1
 			Rectangle rectangle = new Rectangle(100, 40, 350, 30, 3, Color.AliceBlue);
 			rectangle.Info(e);
-			
+
 			Square square = new Square(50, 500, 50, 5, Color.Red);
 			square.Info(e);
 
-			Circle circle = new Circle(100,600,50,5,Color.Yellow);
+			Circle circle = new Circle(100, 600, 50, 5, Color.Yellow);
 			circle.Info(e);
 
-			EquilateralTriangle equ = new EquilateralTriangle(50, 500, 150, 4, Color.Green);
-			equ.Info(e);
-			
 			IsoscalesTriangle iso = new IsoscalesTriangle(75, 150, 400, 150, 3, Color.Green);
 			iso.Info(e);
 
-		}
+			EquilateralTriangle equ = new EquilateralTriangle(50, 500, 150, 4, Color.Green);
+			equ.Info(e);
 
+#endif
+
+			Shape[] shapes =
+			{
+				new Rectangle(100, 40, 350, 30, 3, Color.AliceBlue),
+				new Square(50, 500, 50, 5, Color.Red),
+				new Circle(100, 600, 50, 5, Color.Yellow),
+				new IsoscalesTriangle(75, 150, 400, 150, 3, Color.Green),
+				new EquilateralTriangle(50, 500, 150, 4, Color.Green)
+			};
+
+			for (int i = 0; i < shapes.Length; i++)
+			{
+				if(!(shapes[i] is IHaveDiagonal)) 
+				shapes[i].Draw(e);
+			}
+		}
 		[DllImport("kernel32.dll")]
 		public static extern IntPtr GetConsoleWindow();
 
