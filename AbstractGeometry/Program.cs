@@ -27,6 +27,16 @@ namespace AbstractGeometry
 
 			Rectangle rectangle = new Rectangle(100, 40, 300, 30, 3, Color.AliceBlue);
 			rectangle.Info(e);
+
+			Square square = new Square(100, 400, 150, 1, Color.Green);
+			square.Info(e);
+
+			Circle circle = new Circle(50, 500, 40, 1, Color.Yellow);
+			circle.Info(e);
+
+			VersatileTriangle triangle =
+				new VersatileTriangle(40, 100, 700, 150, 5, Color.Blue);
+			triangle.Info(e);
 		}
 
 		[DllImport("kernel32.dll")]
