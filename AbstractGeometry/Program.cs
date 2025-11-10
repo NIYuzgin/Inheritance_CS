@@ -25,8 +25,21 @@ namespace AbstractGeometry
 			
 			// e.Graphics.DrawRectangle(new Pen(Color.Red), 300, 100, 500, 300);
 
-			Rectangle rectangle = new Rectangle(100, 40, 300, 30, 3, Color.AliceBlue);
+			Rectangle rectangle = new Rectangle(100, 40, 350, 30, 3, Color.AliceBlue);
 			rectangle.Info(e);
+			
+			Square square = new Square(50, 500, 50, 5, Color.Red);
+			square.Info(e);
+
+			Circle circle = new Circle(100,600,50,5,Color.Yellow);
+			circle.Info(e);
+
+			EquilateralTriangle equ = new EquilateralTriangle(50, 500, 150, 4, Color.Green);
+			equ.Info(e);
+			
+			IsoscalesTriangle iso = new IsoscalesTriangle(75, 150, 400, 150, 3, Color.Green);
+			iso.Info(e);
+
 		}
 
 		[DllImport("kernel32.dll")]

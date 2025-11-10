@@ -41,10 +41,10 @@ namespace AbstractGeometry
 
 		public override void Draw(System.Windows.Forms.PaintEventArgs e)
 		{
-			Pen pen = new Pen(Color);
+			Pen pen = new Pen(Color, LineWidth);
 			SolidBrush brush = new SolidBrush(Color);
 			e.Graphics.DrawRectangle(pen, StartX, StartY, (float)Width, (float)Height);
-			e.Graphics.FillRectangle(brush, StartX, StartY, (float)Width, (float)Height);
+			//e.Graphics.FillRectangle(brush, StartX, StartY, (float)Width, (float)Height);
 		}
 		public override void Info(System.Windows.Forms.PaintEventArgs e)
 		{
