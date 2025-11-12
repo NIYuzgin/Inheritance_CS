@@ -8,8 +8,8 @@ using System.Windows.Forms;
 
 namespace AbstractGeometry
 {
-	internal class IsoscalesTriangle:Triangle
-	
+	internal class IsoscalesTriangle:Triangle, IHaveHeight
+
 	{
 		double @base; // 'base' - ключевое слово, означающее базовый класс.
 					  // ключевые слова нельзя использовать для именования 
@@ -40,7 +40,7 @@ namespace AbstractGeometry
 			Math.Sqrt(Math.Pow(Side, 2) - Math.Pow(Base / 2, 2));
 		public override double GetArea() => Base * GetHeight() / 2;
 		public override double GetPerimeter() => Base + Side * 2;
-		
+
 		public override void Draw(PaintEventArgs e)
 		{
 			Pen pen = new Pen(Color, LineWidth);
@@ -53,16 +53,24 @@ namespace AbstractGeometry
 			e.Graphics.DrawPolygon(pen, vertices);
 		}
 
+		public void DrawHeight(System.Windows.Forms.PaintEventArgs e)
+		{
+			Pen pen = new Pen(Color, 1);
+			e.Graphics.DrawLine
+				(
+				pen,
+				StartX + (int)Base / 2, StartY,
+				StartX + (int)Base / 2, StartY + (int)GetHeight()
+				);
+		}
+
 		public override void Info(PaintEventArgs e)
 		{
 			Console.WriteLine($"Основание:{Base}");
 			Console.WriteLine($"Сторона:{Side}");
 			base.Info(e);
+			DrawHeight(e);
 		}
-
-
-
-
 
 	}
 }

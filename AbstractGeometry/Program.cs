@@ -1,4 +1,4 @@
-﻿//#define ABSTRACT_1
+﻿#define ABSTRACT_1
 
 using System;
 using System.Collections.Generic;
@@ -43,8 +43,10 @@ namespace AbstractGeometry
 			EquilateralTriangle equ = new EquilateralTriangle(50, 500, 150, 4, Color.Green);
 			equ.Info(e);
 
+
 #endif
 
+			/*
 			Shape[] shapes =
 			{
 				new Rectangle(100, 40, 350, 30, 3, Color.AliceBlue),
@@ -59,6 +61,10 @@ namespace AbstractGeometry
 				if(!(shapes[i] is IHaveDiagonal)) 
 				shapes[i].Draw(e);
 			}
+
+			*/
+
+
 		}
 		[DllImport("kernel32.dll")]
 		public static extern IntPtr GetConsoleWindow();
